@@ -2,14 +2,15 @@
   "compilerOptions": {
     "target": "ES2020",
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "dist/www"
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "include": ["src/www/**/*"],
+  "exclude": ["node_modules", "src/www/vite.config.ts"]
 } 
