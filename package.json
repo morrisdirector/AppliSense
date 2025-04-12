@@ -1,0 +1,37 @@
+{
+  "name": "AppliSense",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A little MQTT sensor that listens to your home appliances!",
+  "scripts": {
+    "dev": "vite src/www",
+    "build": "rm -rf build/* && tsc && vite build src/www && cp src/www/assets/* build && npm run gzip && npm run dump",
+    "gzip": "cd ./build && gzip -kf index.html && gzip -kf setup.html && gzip -kf lumenator.js && gzip -kf lumenator.css",
+    "dump": "cd ./build && xxd -i -u index.html.gz >> index.html.h && xxd -i -u setup.html.gz >> setup.html.h && xxd -i -u lumenator.js.gz >> lumenator.js.h && xxd -i -u lumenator.css.gz >> lumenator.css.h"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morrisdirector/AppliSense.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/morrisdirector/AppliSense/issues"
+  },
+  "homepage": "https://github.com/morrisdirector/AppliSense#readme",
+  "dependencies": {
+    "@jaames/iro": "^5.2.3",
+    "@types/node": "^20.0.0",
+    "preact": "^10.16.0",
+    "react-colorful": "^5.4.0",
+    "spark-md5": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/spark-md5": "^3.0.2",
+    "sass": "^1.27.0",
+    "typescript": "^5.0.2",
+    "@preact/preset-vite": "^2.7.0",
+    "vite": "^5.0.0"
+  }
+}
